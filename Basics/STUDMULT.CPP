@@ -25,19 +25,7 @@ class Student{
 		cin>>sad;
 		sad=marksCheck(sad);
 	}
-	int marksCheck(int a){
-		if(a>100 || a<0){
-			do{
-			     cout<<"Marks can not be more than 100 and less than 0!!!";
-			     cout<<"\nEnter mark of that subject again:";
-			     cin>>a;
-			}while(a>100 || a<0);
-		       return a;
-		}
-		else{
-		       return a;
-		}
-	}
+	int marksCheck(int a);
 	public:
 		void process(){
 			getData();
@@ -71,6 +59,20 @@ class Student{
 			cout<<"\n"<<rn<<"\t"<<name<<"\t"<<cpp<<"\t"<<os<<"\t"<<ds<<"\t"<<sad<<"\t"<<total<<"\t"<<per<<"\t"<<result<<"\t"<<grade<<endl;
 		}
 };
+int Student::marksCheck(int a)
+{
+	if(a>100 || a<0){
+		do{
+		     cout<<"Marks can not be more than 100 and less than 0!!!";
+		     cout<<"\nEnter mark of that subject again:";
+                     cin>>a;
+		}while(a>100 || a<0);
+	       return a;
+	}
+	else{
+               return a;
+	}
+}
 void main(){
 	clrscr();
 	Student s[5];
