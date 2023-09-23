@@ -17,14 +17,18 @@ class Distance{
 			cout<<"Kilometer   :"<<km<<endl;
 			cout<<"Meter       :"<<m;
 		}
-        Distance operator -(Distance d){
-            Distance ans;
-            ans.km=km-d.km;
-            ans.m=m-d.m;
-            return ans;
-        }
+                friend Distance operator -(Distance d1,Distance d2)
+                {
+			d1.km-=d2.km;
+			if((d1.m-=d2.m)<0)
+			{
+				d1.m+=1000;
+				d1.km--;
+			}
+			return d1;
+		}
 };
-int main(){
+void main(){
 	Distance d1,d2,d3;
 	d1.getData();
 	d2.getData();
