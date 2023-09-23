@@ -15,9 +15,16 @@ class Time{
 	}
 	Time operator +(Time t){
 		Time ans;
-		ans.hours=hours+t.hours;
-		ans.min=min+t.min;
-		ans.sec=sec+t.sec;
+		ans.hours=0;
+		if((ans.sec=sec+t.sec)>=60){
+			ans.min=ans.sec/60;
+			ans.sec%=60;
+		}
+		if((ans.min+=(min+t.min))>=60){
+			ans.hours=ans.min/60;
+			ans.min%=60;
+		}
+		ans.hours+=(hours+t.hours);
 		return ans;
 	}
 	void putData(){
