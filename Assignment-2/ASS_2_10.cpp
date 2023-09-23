@@ -28,7 +28,7 @@ class Distance{
 			return d1;
 		}
 };
-void main(){
+int main(){
 	Distance d1,d2,d3;
 	d1.getData();
 	d2.getData();
